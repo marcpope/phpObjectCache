@@ -1,8 +1,8 @@
 <?php
 
 /**
-* phpObjectCache
-* Takes JSON data and caches it using a timecondition.
+* SimpleObjectPHPCache
+* Takes data, serializes it and caches it using a timecondition.
  */
 
 class Cache {
@@ -15,16 +15,16 @@ class Cache {
 			return false;
 		} else {
 			$result = file_get_contents($file);
-			return $result;
+			return unserialize($result);
 		}
 		
 	}
 	
-	public function setCache($cacheName, $jsonData) {
+	public function setCache($cacheName, $data) {
 		
 		$file = $_SERVER["DOCUMENT_ROOT"] . '/cache/' . $cacheName . '.cache';
 		$fp = fopen($file,"w");
-		fputs($fp,$jsonData);
+		fputs($fp,serialize($data));
 		fclose($fp);
 		
 		return true;
