@@ -1,6 +1,16 @@
 # phpObjectCache Class
-Accepts JSON data and caches it for a period of time in a file.
+A php class with 3 methods:
 
+**getCache('cacheName',600)**
+Gets data from cacheName if it's less than 10 minutes (600 seconds) old otherwise returns false.
+
+**setCache('cacheName', $data)**
+Stores an object into cache, by your choice of name. Accepts name, and data variable. Data is stored in serialized form.
+
+**deleteCache('cacheName')**
+Deletes cache data by name. Accepts only name parameter.
+
+**Information**
 The Cache Class stores data in the webroot/cache/ fodler. Make sure to create a /cache/ folder and chmod +x the folder so that it is writeable by the php user. 
 
 # Example #
