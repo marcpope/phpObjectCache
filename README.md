@@ -56,12 +56,9 @@ class Station extends Database {
 	
 			// write the cache as a json object
 			$cache = new Cache;
-			$cache->setCache('stations',json_encode($stations));
+			$cache->setCache('stations',$stations);
 			
-		} else {
-			// decode the json back into an assoc array
-			 $stations = json_decode($stations, true);
-		}
+		} 
 		return $stations;
 	}	
 }
