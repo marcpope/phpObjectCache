@@ -14,7 +14,7 @@ Deletes cache data by name. Accepts only name parameter.
 The Cache Class stores data in the webroot/cache/ fodler. Make sure to create a /cache/ folder and chmod +x the folder so that it is writeable by the php user. 
 
 # Example #
-In this example, we query a Radio Station database and return the results in an assoc array. You will include the cache.class.php or use an autoloader. The Database class shows how we connect to the database which is used laster in the Station class.  
+In this example, we query a Radio Station database and return the results in an assoc array. You will include the cache.class.php or use an autoloader. The Database class shows how we connect to the database which is used in the Station class.  
 
 ```
 include 'cache.class.php';
