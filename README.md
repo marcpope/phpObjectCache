@@ -33,18 +33,23 @@ class Database {
 
 class Station extends Database {
 	public function getStations() {
+	
+		//check cache object called 'stations' with 10 minute limit
 		$cache = new Cache;
 		$stations = $cache->getCache('stations',600);
 		
+		// if stations is false, then the cache not exists or is expired
 		if($stations == false) {
 			$sql  	  = "SELECT * FROM stations";
 			$stmt 	  = $this->connect()->query($sql);
 			$stations = $stmt->fetchAll();
 	
+			// write the cache as a json object
 			$cache = new Cache;
 			$cache->setCache('stations',json_encode($stations));
 			
 		} else {
+			// decode the json back into an assoc array
 			 $stations = json_decode($stations, true);
 		}
 		return $stations;
