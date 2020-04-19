@@ -11,7 +11,7 @@ class Cache {
 		
 		$file = $_SERVER["DOCUMENT_ROOT"] . '/cache/' . $cacheName . '.cache';
 		
-		if (filemtime($file) < (time() - $cacheTime)) {
+		if (@filemtime($file) < (time() - $cacheTime)) {
 			return false;
 		} else {
 			$result = file_get_contents($file);
