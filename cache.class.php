@@ -2,7 +2,9 @@
 
 /**
 * SimpleObjectPHPCache
-* Takes data, serializes it and caches it using a timecondition.
+* Takes data, serializes it and caches it with the number of seconds specified.
+* Make sure to create the cache directory in the document root (or modify to your needs)
+* Requires File Permissions, fopen, fputs, fclose, filemtime, unlink in PHP to be enabled
  */
 
 class Cache {
