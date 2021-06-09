@@ -5,6 +5,9 @@
 * Takes data, serializes it and caches it with the number of seconds specified.
 * Make sure to create the cache directory in the document root (or modify to your needs)
 * Requires File Permissions, fopen, fputs, fclose, filemtime, unlink in PHP to be enabled
+
+note: if your cache names are based on user input, the cache names should be sanitized. 
+I do not recommend this practice for obvious reasons.
  */
 
 class Cache {
