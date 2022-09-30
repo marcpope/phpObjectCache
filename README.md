@@ -1,17 +1,17 @@
 # phpObjectCache Class
-A php class with 3 methods:
+A super-lightweight php disk-based cache class with 3 methods:
 
-**getCache('cacheName',600)**
-Gets data from cacheName if it's less than 10 minutes (600 seconds) old otherwise returns false.
+**getCache('cacheName',X)**
+Returns any cache that is X seconds (integer) old or newer. If older, it's returned as false
 
 **setCache('cacheName', $data)**
-Stores an object into cache, by your choice of name. Accepts name, and data variable. Data is stored in serialized form.
+Stores an object into cache, by your choice of name. Accepts name, and data variable. Data is stored serialized .
 
 **deleteCache('cacheName')**
 Deletes cache data by name. Accepts only name parameter.
 
 **Information**
-The Cache Class stores data in the webroot/cache/ fodler. Make sure to create a /cache/ folder and chmod +x the folder so that it is writeable by the php user. 
+The Cache Class stores data in the webroot/cache/ fodler. Make sure to create a /cache/ folder and chmod +x the folder so that it is writeable by the php user executing the script.
 
 # Example #
 In this example, we query a Radio Station DB and return the results in an assoc array. You will include the cache.class.php or use an autoloader. The Database class shows how we connect to the database which is used in the Station class.  
